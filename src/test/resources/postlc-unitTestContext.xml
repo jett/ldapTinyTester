@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.ucpb.tfs2"/>
+
+    <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
+        <property name="url" value="ldap://192.168.1.146:389" />
+        <property name="base" value="dc=ucpb,dc=com" />
+        <property name="userDn" value="CN=administrator,CN=Users,DC=ucpb,DC=com " />
+        <!--<property name="anonymousReadOnly" value="true"/>-->
+        <property name="password" value="password$1" />
+        <!--<property name="pooled" value="true" />-->
+        <!-- AD Specific Setting for avoiding the partial exception error -->
+        <property name="referral" value="follow" />
+    </bean>
+
+</beans>
