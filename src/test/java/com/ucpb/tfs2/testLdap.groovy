@@ -19,7 +19,8 @@ class testLdap {
         // adding custom attributes
         // http://virtualizesharepoint.com/2011/07/04/adding-custom-attributes-to-active-directory-user-profile/
 
-        println ldapDao.getUserAttributes("mcueto");
+        println ldapDao.getUserAttributes("jbabate");
+
 
     }
 

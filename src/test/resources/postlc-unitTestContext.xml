@@ -14,11 +14,34 @@
     <context:component-scan base-package="com.ucpb.tfs2"/>
 
     <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
-        <property name="url" value="ldap://192.168.1.146:389" />
+<!--
+		<property name="url" value="ldap://ADPW08IBL02.UCPB8.COM:389" />
+        <property name="base" value="dc=ucpb8,dc=com" />
+		<property name="userDn" value="CN=Marvin Anthony P. Volante,OU=Contractuals(DR),OU=ITMG,OU=ITMG,OU=Group,DC=UCPB8,DC=COM" /> 
+		<property name="userDn" value="CN=Valentino Pecaoco,OU=Contractuals(DR),OU=ITMG,OU=ITMG,OU=Group,DC=UCPB8,DC=COM" /> 
+		<property name="password" value="ipc1234567~" /> 
+-->
+<!--	
+		<property name="url" value="ldap://ADPW08IBL07.STAGING.UCPB8.COM:389" />
+		<property name="base" value="dc=staging,dc=ucpb8,dc=com" />
+		<property name="userDn" value="CN=TSD Test1,OU=TSD,DC=STAGING,DC=UCPB8,DC=COM"/>
+		<property name="password" value="Abc789$" />
+-->				
+
+<!--
+		<property name="url" value="ldap://ADPW08IBL07.STAGING.UCPB8.COM:389" />
+		<property name="base" value="dc=staging,dc=ucpb8,dc=com" />
+		<property name="userDn" value="CN=Jing A. Babate,OU=TSD,DC=STAGING,DC=UCPB8,DC=COM"/>
+		<property name="password" value="ipc1234567~" />
+-->
+
+        <property name="url" value="ldap://192.168.1.130:389" />
         <property name="base" value="dc=ucpb,dc=com" />
-        <property name="userDn" value="CN=administrator,CN=Users,DC=ucpb,DC=com " />
-        <!--<property name="anonymousReadOnly" value="true"/>-->
+        <property name="userDn" value="CN=Administrator,CN=Users,DC=UCPB,DC=COM"/>
         <property name="password" value="password$1" />
+
+        <!--<property name="anonymousReadOnly" value="true"/>-->
+        
         <!--<property name="pooled" value="true" />-->
         <!-- AD Specific Setting for avoiding the partial exception error -->
         <property name="referral" value="follow" />
